@@ -7,8 +7,7 @@ const app = express();
 
 // === DÁN CHUỖI KẾT NỐI CỦA BẠN VÀO ĐÂY ===
 // Thay <username>, <password> và tên DB (ví dụ: GocSachNhoDB)
-const DB_CONNECT_STRING = "mongodb+srv://GocSachNho_admin:<db_password>@gocsachnho.p3cezce.mongodb.net/";
-
+const DB_CONNECT_STRING = process.env.DB_CONNECT_STRING;
 // Kết nối Database
 mongoose.connect(DB_CONNECT_STRING)
   .then(() => console.log('Đã kết nối thành công tới MongoDB Atlas!'))
@@ -29,4 +28,5 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 3001; // Dùng cổng 3001
 app.listen(PORT, () => {
   console.log(`Server đang chạy ở cổng ${PORT}`);
+
 });
