@@ -1,8 +1,8 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/User');
-const Book = require('../models/Book');
+const User = require('..User');
+const Book = require('..Book');
 
 const router = express.Router();
 
@@ -113,5 +113,6 @@ router.get('/create-dummy-book', async (req, res) => {
         res.json({ success: false, message: 'Lỗi tạo sách.'});
     }
 });
+
 
 module.exports = router;
